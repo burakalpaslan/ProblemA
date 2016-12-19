@@ -1,0 +1,65 @@
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class ass {
+	public static void main(String[] args) {
+		
+
+		part1();
+		
+	}
+	
+	public static void part2(){
+		int a [] = new int [3];
+		int biggestOne=1000 ;
+		JTextField number = new JTextField();
+		
+		Object[] message = { "Number:", number};
+		int counter = 0;
+		while (counter < 3) {
+			int option = JOptionPane.showConfirmDialog(null, message, "BiggestOne", JOptionPane.OK_CANCEL_OPTION);
+			a[counter]=Integer.parseInt(number.getText());
+			counter++;
+		}
+		for (int i = 0 ; i<3 ; i++){
+			
+			if (a[i]<biggestOne){
+				biggestOne=a[i];
+				
+			}
+			
+		}
+		JOptionPane.showInputDialog(biggestOne, "The Biggest Number is ");
+
+	}
+	public static void part1(){
+		
+		JTextField username = new JTextField();
+		JTextField password = new JPasswordField();
+		Object[] message = { "Username:", username, "Password:", password };
+		int counter = 0;
+		while (counter < 3) {
+			int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+			if (option == JOptionPane.OK_OPTION) {
+				if (username.getText().equals("�MER") && password.getText().equals("8855")) {
+					System.out.println("Welcome");
+					break;
+				} else {
+					System.out.println("login failed , Try again ! ");
+					username.setText(" ");
+					password.setText(" ");
+				}
+			} else {
+				System.out.println("Login canceled");
+			}
+			counter++;
+		}
+		
+		System.out.println("Login canceled");
+	}
+
+}
